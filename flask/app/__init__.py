@@ -12,9 +12,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'false'
 #this connect the db to the db I'm building with docker compose
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@db:3306/daviddb'
 
-#nonsense comment so I can test my new personal access token
-#more nonsense
-
 db = SQLAlchemy(app)
 
 class CityRecord(db.Model):
@@ -28,7 +25,7 @@ def get_all_cities():
 @app.route('/', methods=["GET"])
 def index():
     cities = get_all_cities();
-    result = ""
+    result = "<h1>Cities</h1>"
     for city in cities:
         result += f"<p>{city.name} is the #{city.id} city!</p>"
     return result
