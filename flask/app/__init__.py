@@ -13,6 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'false'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@db:3306/daviddb'
 
 #nonsense comment so I can test my new personal access token
+#more nonsense
 
 db = SQLAlchemy(app)
 
