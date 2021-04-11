@@ -6,10 +6,10 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'false'
 
-#this is how I was connecting to the test DB I made in a docker container
+#this connects to the test database I built in a standalone docker container called "mysql_test"
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@localhost:3306/daviddb'
 
-#this is how I'm setting it up for docker compose
+#this connect the db to the db I'm building with docker compose
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@db:3306/daviddb'
 
 db = SQLAlchemy(app)
