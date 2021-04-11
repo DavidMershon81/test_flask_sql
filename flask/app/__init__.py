@@ -12,6 +12,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'false'
 #this connect the db to the db I'm building with docker compose
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@db:3306/daviddb'
 
+#nonsense comment so I can test my new personal access token
+
 db = SQLAlchemy(app)
 
 class CityRecord(db.Model):
